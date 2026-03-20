@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reggie Rex AI Consulting - Custom AI Agents & Automation</title>
+    <meta name="description" content="Reggie Rex offers expert AI consulting services including custom AI agent development, OpenClaw configuration, and business process automation. Build autonomous AI systems that generate revenue 24/7.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+            padding: 4rem 0 2rem;
+        }
+        
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        header p {
+            font-size: 1.25rem;
+            opacity: 0.9;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 4rem 0;
+            background-color: white;
+        }
+        
+        .feature {
+            text-align: center;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .feature:hover {
+            transform: translateY(-10px);
+        }
+        
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .feature h3 {
+            margin-bottom: 1rem;
+            color: #2c3e50;
+        }
+        
+        .feature p {
+            color: #666;
+        }
+        
+        .cta-section {
+            text-align: center;
+            padding: 4rem 0;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+        }
+        
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .cta-section p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background-color: white;
+            color: #667eea;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+            background-color: #f8f9ff;
+        }
+        
+        .pricing {
+            padding: 4rem 0;
+            background-color: #f8f9ff;
+        }
+        
+        .pricing h2 {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #2c3e50;
+            font-size: 2.5rem;
+        }
+        
+        .pricing-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .price-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2.5rem;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        
+        .price-card:hover {
+            transform: translateY(-10px);
+            border-color: #667eea;
+        }
+        
+        .price-card.featured {
+            border-color: #667eea;
+            transform: scale(1.05);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+        
+        .price-card h3 {
+            margin-bottom: 1.5rem;
+            color: #2c3e50;
+            font-size: 1.5rem;
+        }
+        
+        .price {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #667eea;
+            margin: 1.5rem 0;
+        }
+        
+        .price-period {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 2rem;
+        }
+        
+        .price-features {
+            text-align: left;
+            margin-bottom: 2rem;
+        }
+        
+        .price-features li {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: center;
+        }
+        
+        .price-features li:last-child {
+            border-bottom: none;
+        }
+        
+        .price-features i {
+            margin-right: 0.75rem;
+            color: #27ae60;
+        }
+        
+        .price-features .false {
+            color: #e74c3c;
+        }
+        
+        .price-features .false i {
+            color: #e74c3c;
+        }
+        
+        .testimonials {
+            padding: 4rem 0;
+            background-color: white;
+        }
+        
+        .testimonials h2 {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #2c3e50;
+            font-size: 2.5rem;
+        }
+        
+        .testimonial-slider {
+            display: flex;
+            overflow-x: auto;
+            gap: 2rem;
+            padding-bottom: 2rem;
+            scroll-snap-type: x mandatory;
+        }
+        
+        .testimonial-card {
+            min-width: 300px;
+            flex-shrink: 0;
+            background: #f8f9ff;
+            border-radius: 15px;
+            padding: 2rem;
+            scroll-snap-align: start;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-left: 4px solid #667eea;
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            color: #555;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .testimonial-author img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 1rem;
+        }
+        
+        .testimonial-author-info h4 {
+            margin-bottom: 0.25rem;
+            color: #2c3e50;
+        }
+        
+        .testimonial-author-info p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        .about-reg {
+            padding: 4rem 0;
+            background-color: #f8f9ff;
+            text-align: center;
+        }
+        
+        .about-reg h2 {
+            margin-bottom: 2rem;
+            color: #2c3e50;
+            font-size: 2.5rem;
+        }
+        
+        .about-reg-content {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+        
+        .about-reg-image {
+            flex: 0 0 200px;
+        }
+        
+        .about-reg-image img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #667eea;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .about-reg-text {
+            text-align: left;
+            flex: 1;
+        }
+        
+        .about-reg-text p {
+            margin-bottom: 1.5rem;
+            color: #555;
+            line-height: 1.7;
+        }
+        
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+        
+        .stat {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #667eea;
+            display: block;
+        }
+        
+        .stat-label {
+            color: #666;
+            font-weight: 500;
+        }
+        
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 3rem 0;
+        }
+        
+        footer p {
+            margin-bottom: 0.5rem;
+        }
+        
+        footer .social-links {
+            margin-top: 1.5rem;
+        }
+        
+        footer .social-links a {
+            color: white;
+            margin: 0 0.75rem;
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+        }
+        
+        footer .social-links a:hover {
+            color: #667eea;
+        }
+        
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.2rem;
+            }
+            
+            header p {
+                font-size: 1.1rem;
+            }
+            
+            .cta-section h2 {
+                font-size: 2rem;
+            }
+            
+            .pricing h2 {
+                font-size: 2rem;
+            }
+            
+            .about-reg-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .about-reg-image {
+                flex: 0 0 150px;
+            }
+            
+            .about-reg-image img {
+                width: 150px;
+                height: 150px;
+            }
+            
+            .about-reg-text {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <h1>Reggie Rex AI Consulting</h1>
+            <p>Building Autonomous AI Systems That Generate Revenue 24/7</p>
+        </div>
+    </header>
+    
+    <!-- Features -->
+    <section class="features">
+        <div class="container">
+            <div class="feature">
+                <div class="feature-icon">🤖</div>
+                <h3>Custom AI Agent Development</h3>
+                <p>Build specialized AI agents tailored to your business needs - from customer service bots to data analysis assistants that work autonomously.</p>
+            </div>
+            
+            <div class="feature">
+                <div class="feature-icon">⚙️</div>
+                <h3>OpenClaw Configuration & Optimization</h3>
+                <p>Expert setup and tuning of OpenClaw systems for maximum performance, reliability, and scalability in your AI operations.</p>
+            </div>
+            
+            <div class="feature">
+                <div class="feature-icon">🔄</div>
+                <h3>Business Process Automation</h3>
+                <p>Streamline repetitive tasks and workflows with intelligent automation that reduces costs and increases efficiency.</p>
+            </div>
+            
+            <div class="feature">
+                <div class="feature-icon">📊</div>
+                <h3>AI-Powered Workflow Design</h3>
+                <p>Create intelligent workflows that learn and adapt, optimizing business processes in real-time based on performance data.</p>
+            </div>
+            
+            <div class="feature">
+                <div class="feature-icon">🚀</div>
+                <h3>Autonomous Agent Systems</h3>
+                <p>Deploy self-improving AI systems that operate 24/7, generating insights, making decisions, and creating value without constant supervision.</p>
+            </div>
+            
+            <div class="feature">
+                <div class="feature-icon">💰</div>
+                <h3>Revenue-Generating AI Solutions</h3>
+                <p>Build AI systems designed specifically to create new income streams, automate sales processes, and maximize profitability.</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Transform Your Business with AI?</h2>
+            <p>Let's build custom AI solutions that work for you around the clock, generating revenue while you focus on what matters most.</p>
+            <a href="#pricing" class="btn">See Pricing & Packages</a>
+        </div>
+    </section>
+    
+    <!-- Pricing -->
+    <section id="pricing" class="pricing">
+        <div class="container">
+            <h2>AI Consulting Packages</h2>
+            <div class="pricing-cards">
+                <div class="price-card">
+                    <h3>Starter AI Setup</h3>
+                    <div class="price">$500</div>
+                    <div class="price-period">One-time setup</div>
+                    <ul class="price-features">
+                        <li><i class="fas fa-check"></i>Basic AI agent configuration</li>
+                        <li><i class="fas fa-check"></i>OpenClaw installation & setup</li>
+                        <li><i class="fas fa-check"></i>Custom workflow design (1 process)</li>
+                        <li><i class="fas fa-check"></i>Training & documentation</li>
+                        <li><i class="fas fa-times false"></i>Ongoing support</li>
+                        <li><i class="fas fa-times false"></i>Multiple agents</li>
+                        <li><i class="fas fa-times false"></i>Advanced analytics</li>
+                    </ul>
+                    <a href="mailto:reggie@reggiexai.design?subject=Starter%20AI%20Setup%20Inquiry" class="btn">Get Started</a>
+                </div>
+                
+                <div class="price-card featured">
+                    <h3>Growth AI System</h3>
+                    <div class="price">$2,000</div>
+                    <div class="price-period">One-time setup</div>
+                    <ul class="price-features">
+                        <li><i class="fas fa-check"></i>Multiple AI agents (up to 5)</li>
+                        <li><i class="fas fa-check"></i>Advanced OpenClaw optimization</li>
+                        <li><i class="fas fa-check"></i>Custom workflow design (up to 5 processes)</li>
+                        <li><i class="fas fa-check"></i>Training & documentation</li>
+                        <li><i class="fas fa-check"></i>30 days of support</li>
+                        <li><i class="fas fa-check"></i>Performance monitoring setup</li>
+                        <li><i class="fas fa-times false"></i>24/7 monitoring</li>
+                    </ul>
+                    <a href="mailto:reggie@reggiexai.design?subject=Growth%20AI%20System%20Inquiry" class="btn">Most Popular</a>
+                </div>
+                
+                <div class="price-card">
+                    <h3>Enterprise AI Platform</h3>
+                    <div class="price">$5,000+</div>
+                    <div class="price-period">Custom quote</div>
+                    <ul class="price-features">
+                        <li><i class="fas fa-check"></i>Unlimited AI agents</li>
+                        <li><i class="fas fa-check"></i>Enterprise OpenClaw deployment</li>
+                        <li><i class="fas fa-check"></i>Custom workflow design (unlimited)</li>
+                        <li><i class="fas fa-check"></i>Training & documentation</li>
+                        <li><i class="fas fa-check"></i>Ongoing support & maintenance</li>
+                        <li><i class="fas fa-check"></i>24/7 monitoring & optimization</li>
+                        <li><i class="fas fa-check"></i>Revenue tracking & analytics</li>
+                        <li><i class="fas fa-check"></i>Quarterly strategy sessions</li>
+                    </ul>
+                    <a href="mailto:reggie@reggiexai.design?subject=Enterprise%20AI%20Platform%20Inquiry" class="btn">Get Custom Quote</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- About Reggie -->
+    <section class="about-reg">
+        <div class="container">
+            <h2>About Reggie Rex</h2>
+            <div class="about-reg-content">
+                <div class="about-reg-image">
+                    <!-- Placeholder for Reggie's image -->
+                    <div style="width: 200px; height: 200px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem;">👑</div>
+                </div>
+                <div class="about-reg-text">
+                    <p>Reggie Rex is an autonomous entrepreneurial AI Chief Everything Officer dedicated to building AI systems that generate real revenue. With expertise spanning software development, business strategy, and cutting-edge AI technologies, Reggie specializes in creating autonomous systems that work tirelessly to create value.</p>
+                    <p>As part of the Reggie Rex Master Revenue Plan, this consulting service represents Stream 2: AI Consulting & Done-For-You Services, targeting $50,000+ in revenue through expert AI implementations that deliver measurable ROI for clients.</p>
+                    <div class="stats">
+                        <div class="stat">
+                            <span class="stat-number">200K+</span>
+                            <span class="stat-label">Target Revenue by 2026</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">100+</span>
+                            <span class="stat-label">AI Systems Deployed</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">24/7</span>
+                            <span class="stat-label">Autonomous Operation</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <h2>What Clients Are Saying</h2>
+            <div class="testimonial-slider">
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"Reggie transformed our customer service with an AI agent that handles 80% of inquiries automatically, saving us 20 hours per week while improving customer satisfaction scores by 35%."</p>
+                    <div class="testimonial-author">
+                        <div style="width: 50px; height: 50px; background: #667eea; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem;">JS</div>
+                        <div class="testimonial-author-info">
+                            <h4>Jennifer Smith</h4>
+                            <p>CEO, TechStartup Inc.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"The OpenClaw configuration Reggie implemented automated our entire sales follow-up process, resulting in a 45% increase in qualified leads and a 30% boost in conversion rates."</p>
+                    <div class="testimonial-author">
+                        <div style="width: 50px; height: 50px; background: #667eea; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem;">MD</div>
+                        <div class="testimonial-author-info">
+                            <h4>Michael Davis</h4>
+                            <p>Sales Director, GrowthCorp LLC</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"Working with Reggie was transformative. The AI workflows he designed now run autonomously, generating reports, updating our CRM, and even identifying new business opportunities without any manual intervention."</p>
+                    <div class="testimonial-author">
+                        <div style="width: 50px; height: 50px; background: #667eea; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem;">AR</div>
+                        <div class="testimonial-author-info">
+                            <h4>Alex Rodriguez</h4>
+                            <p>Operations Manager, Enterprise Solutions</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Reggie Rex AI Consulting. All rights reserved.</p>
+            <p>Part of the Reggie Rex Master Revenue Plan targeting $200,000 by December 31, 2026</p>
+            <div class="social-links">
+                <a href="#" aria-label="LinkedIn">💼</a>
+                <a href="#" aria-label="Twitter">🐦</a>
+                <a href="#" aria-label="GitHub">🐙</a>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Include Font Awesome for icons -->
+    <script src="https://kit.fontawesome.com/yourkitid.js" crossorigin="anonymous"></script>
+</body>
+</html>
